@@ -669,8 +669,7 @@ let WISH_REWARDS = {};
 let MILESTONES = {};
 let QUOTES = [];
 
-const API_BASE = 'https://meimei-api-oeqmlepdru.cn-beijing.fcapp.run';
-// const API_BASE = 'http://localhost:3000';
+const API_BASE = '';
 let contentLoaded = false;
 
 function defaultState(){
@@ -1811,7 +1810,7 @@ function hidePWABar(){
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;showPWABar();});
 window.addEventListener('appinstalled',()=>hidePWABar());
 function installPWA(){if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(()=>deferredPrompt=null);}}
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/meimei-wishlist/sw.js').catch(()=>{}));}
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}
 
 // ════ INIT ════
 checkFestival();
